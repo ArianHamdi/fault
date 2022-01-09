@@ -1,5 +1,5 @@
 import input from './src/input.js';
-import { error } from './src/theme.js';
+import { error, active } from './src/theme.js';
 import model from './src/model.js'
 import { stringify } from 'csv/sync'
 import fs from 'fs'
@@ -36,8 +36,16 @@ const App = () => {
         }
     }
 
-    const outputRecords = stringify(result, { header: true });
-    fs.writeFileSync(`./output/output.csv`, outputRecords)
+    try {
+        const outputRecords = stringify(result, { header: true });
+        fs.writeFileSync(`./output/output.csv`, outputRecords)
+        console.log(active('file has been successfully created in ./output/output.csv'))
+    }
+    catch (err) {
+        console.log(err);
+        console.log(error('something went wrong!'));
+    }
+
 }
 
 App();
