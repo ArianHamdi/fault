@@ -5,6 +5,7 @@ import { stringify } from 'csv/sync'
 import fs from 'fs'
 
 const App = () => {
+    const fileName = input('enter file name : ')
     const sampleRate = +input('enter sample rate : ');
 
     let x = [];
@@ -38,8 +39,8 @@ const App = () => {
 
     try {
         const outputRecords = stringify(result, { header: true });
-        fs.writeFileSync(`./output/output.csv`, outputRecords)
-        console.log(active('file has been successfully created in ./output/output.csv'))
+        fs.writeFileSync(`./output/${fileName}.csv`, outputRecords)
+        console.log(active(`file has been successfully created in ./output/${fileName}.csv`))
     }
     catch (err) {
         console.log(err);
