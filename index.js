@@ -28,11 +28,11 @@ const App = () => {
         const data = model[key];
         const length = value / sampleRate;
         for (let i = 0; i < length; i++) {
-            currentTime += sampleRate
             result.push({
                 time: currentTime,
                 ...data
             })
+            currentTime += sampleRate
         }
     }
 
