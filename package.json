@@ -1,0 +1,15 @@
+{
+  "name": "fault",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "csv": "^6.0.5",
+    "prompt-sync": "^4.2.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
